@@ -31,20 +31,19 @@ extension IFormViewModel {
 
 protocol ICellModel {
 
+    var type: CellType { get }
     var isValid: Bool { get }
 }
 
-// class CellModel {
-//
-//    enum CellType {
-//        case text
-//        case selection
-//    }
-//
-//    let type: CellType
-//    var isValid = false
-//
-//    init(type: CellType) {
-//        self.type = type
-//    }
-// }
+enum CellType {
+
+    case undefined
+    case text
+    case selection
+}
+
+class CellModelText {
+
+    var type: CellType { .text }
+    var isValid: Bool { false }
+}

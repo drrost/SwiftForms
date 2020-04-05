@@ -85,6 +85,8 @@ class MainScreenViewModelTests: XCTestCase {
 
 class CellModelMock: ICellModel {
 
+    var type: CellType { .undefined }
+
     var isValid: Bool
 
     init(_ isValid: Bool) {

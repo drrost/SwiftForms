@@ -8,4 +8,7 @@
 
 import UIKit
 
-class TextCell: UITableViewCell {}
+class TextCell: UITableViewCell {
+
+//    func updateWithModel(_ model: )
+}
