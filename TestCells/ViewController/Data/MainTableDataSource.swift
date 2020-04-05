@@ -11,6 +11,7 @@ import UIKit
 class MainTableDataSource: NSObject {
 
     private let cellIdentifier = "TextCell"
+    private let viewModel = MainScreenViewModel()
 }
 
 // MARK: - UITableViewDataSource
@@ -18,13 +19,13 @@ class MainTableDataSource: NSObject {
 extension MainTableDataSource: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        viewModel.cells.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! TextCell
-        cell.textLabel?.text = String(indexPath.row)
+        cell.titleLabel.text = viewModel.cells[indexPath.row].title
         return cell
     }
 }

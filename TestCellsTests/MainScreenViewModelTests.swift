@@ -89,6 +89,8 @@ class CellModelMock: ICellModel {
 
     var type: CellType { .undefined }
 
+    var title: String = ""
+
     var isValid: Bool
 
     init(_ isValid: Bool) {

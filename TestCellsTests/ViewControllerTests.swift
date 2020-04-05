@@ -32,4 +32,16 @@ class ViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut)
         XCTAssertFalse(sut.sendButton.isEnabled)
     }
+
+    func testdd() {
+        // Given
+        let indexPath = IndexPath(row: 0, section: 0)
+
+        // When
+        let cell = sut.dataSource.tableView(
+            sut.tableView, cellForRowAt: indexPath) as! TextCell
+
+        // Then
+        XCTAssertEqual(cell.titleLabel.text, "First Name")
+    }
 }

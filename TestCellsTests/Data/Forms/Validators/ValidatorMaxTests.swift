@@ -19,7 +19,7 @@ class ValidatorMaxTests: XCTestCase {
     // MARK: - Tests routines
 
     override func setUp() {
-        sut = ValidatorMax(maxLenght: 0)
+        sut = ValidatorMax(0)
     }
 
     // MARK: - Init tests

@@ -17,7 +17,7 @@ class ValidatorMax: IValidator {
         text.count == maxLenght
     }
 
-    init(maxLenght: Int) {
+    init(_ maxLenght: Int) {
         self.maxLenght = maxLenght
     }
 }

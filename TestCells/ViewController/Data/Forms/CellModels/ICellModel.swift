@@ -11,6 +11,7 @@ import Foundation
 protocol ICellModel {
 
     var type: CellType { get }
+    var title: String { get }
     var isValid: Bool { get }
     var validator: IValidator { get set }
 }

@@ -10,5 +10,8 @@ import UIKit
 
 class TextCell: UITableViewCell {
 
-//    func updateWithModel(_ model: )
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var textField: UITextField!
+
+    //    func updateWithModel(_ model: )
 }

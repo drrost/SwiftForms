@@ -13,6 +13,8 @@ class CellModelText: ICellModel {
     // MARK: - ICellModel
 
     var type: CellType { .text }
+    var title: String
+
     var isValid: Bool {
         switch validator {
         case let v as ValidatorMax:
@@ -32,7 +34,12 @@ class CellModelText: ICellModel {
 
     // MARK: - Init
 
-    init(text: String = "", placeholder: String = "", _ validator: IValidator) {
+    init(title: String = "",
+         text: String = "",
+         placeholder: String = "",
+         _ validator: IValidator) {
+
+        self.title = title
         self.text = text
         self.placeholder = placeholder
         self.validator = validator

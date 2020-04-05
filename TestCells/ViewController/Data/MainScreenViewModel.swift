@@ -11,7 +11,8 @@ import Foundation
 class MainScreenViewModel: IFormViewModel {
 
     var cells: [ICellModel] = {
-
-        []
+        [CellModelText(title: "First Name",
+                       placeholder: "Type your first name here",
+                       ValidatorMax(10))]
     }()
 }

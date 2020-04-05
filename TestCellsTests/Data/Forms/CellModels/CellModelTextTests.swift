@@ -34,7 +34,7 @@ class CellModelTextTests: XCTestCase {
     func testText3Max3_CellValid() {
         // Given
         sut.text = "abc"
-        sut.validator = ValidatorMax(maxLenght: 3)
+        sut.validator = ValidatorMax(3)
 
         // When
         let result = sut.isValid
@@ -46,7 +46,7 @@ class CellModelTextTests: XCTestCase {
     func testText2Max3_CellNotValid() {
         // Given
         sut.text = "ab"
-        sut.validator = ValidatorMax(maxLenght: 3)
+        sut.validator = ValidatorMax(3)
 
         // When
         let result = sut.isValid
@@ -58,7 +58,7 @@ class CellModelTextTests: XCTestCase {
     func testText4Max3_CellNotValid() {
         // Given
         sut.text = "abcd"
-        sut.validator = ValidatorMax(maxLenght: 3)
+        sut.validator = ValidatorMax(3)
 
         // When
         let result = sut.isValid

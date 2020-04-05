@@ -48,6 +48,10 @@
                                                 <constraint firstAttribute="bottom" secondItem="iqE-HB-kKu" secondAttribute="bottom" constant="5" id="w4l-5K-7eT"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="textField" destination="iqE-HB-kKu" id="mho-0I-IhA"/>
+                                            <outlet property="titleLabel" destination="fSS-JZ-YZj" id="X82-fr-1Da"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TheCell" rowHeight="144" id="LUL-2I-oea" userLabel="SelectionCell" customClass="SelectionCell" customModule="TestCells" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72.5" width="414" height="144"/>

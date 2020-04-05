@@ -17,7 +17,7 @@ class ViewController: UIViewController {
 
     // MARK: - Variables
 
-    private var dataSource: MainTableDataSource!
+    var dataSource: MainTableDataSource!
 
     // MARK: - View lifecycle
 
