@@ -10,7 +10,7 @@ import UIKit
 
 class MainTableDataSource: NSObject {
 
-    private let cellIdentifier = "TheCell"
+    private let cellIdentifier = "TextCell"
 }
 
 // MARK: - UITableViewDataSource
@@ -23,7 +23,7 @@ extension MainTableDataSource: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! TheCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! TextCell
         cell.textLabel?.text = String(indexPath.row)
         return cell
     }

@@ -13,9 +13,12 @@
 		1178328F2439E963004514E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1178328D2439E963004514E3 /* Main.storyboard */; };
 		117832912439E965004514E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 117832902439E965004514E3 /* Assets.xcassets */; };
 		117832942439E965004514E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 117832922439E965004514E3 /* LaunchScreen.storyboard */; };
-		1178329F2439E965004514E3 /* TestCellsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178329E2439E965004514E3 /* TestCellsTests.swift */; };
 		117832AC2439EAE9004514E3 /* MainTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117832AB2439EAE9004514E3 /* MainTableDataSource.swift */; };
 		117832B02439EB81004514E3 /* TheCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117832AF2439EB81004514E3 /* TheCell.swift */; };
+		11DB175D2439ECBD0023A595 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DB175C2439ECBD0023A595 /* TextCell.swift */; };
+		11DB175F2439ECCA0023A595 /* SelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DB175E2439ECCA0023A595 /* SelectionCell.swift */; };
+		11DB17612439F10A0023A595 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DB17602439F10A0023A595 /* ViewControllerTests.swift */; };
+		11DB17642439F15C0023A595 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DB17632439F15C0023A595 /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,10 +41,13 @@
 		117832932439E965004514E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		117832952439E965004514E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1178329A2439E965004514E3 /* TestCellsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestCellsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1178329E2439E965004514E3 /* TestCellsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCellsTests.swift; sourceTree = "<group>"; };
 		117832A02439E965004514E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		117832AB2439EAE9004514E3 /* MainTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableDataSource.swift; sourceTree = "<group>"; };
 		117832AF2439EB81004514E3 /* TheCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCell.swift; sourceTree = "<group>"; };
+		11DB175C2439ECBD0023A595 /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
+		11DB175E2439ECCA0023A595 /* SelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCell.swift; sourceTree = "<group>"; };
+		11DB17602439F10A0023A595 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
+		11DB17632439F15C0023A595 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,7 @@
 		117832862439E963004514E3 /* TestCells */ = {
 			isa = PBXGroup;
 			children = (
+				11DB17622439F1290023A595 /* Utils */,
 				117832872439E963004514E3 /* AppDelegate.swift */,
 				117832892439E963004514E3 /* SceneDelegate.swift */,
 				117832AA2439EAC8004514E3 /* ViewController */,
@@ -97,7 +104,7 @@
 		1178329D2439E965004514E3 /* TestCellsTests */ = {
 			isa = PBXGroup;
 			children = (
-				1178329E2439E965004514E3 /* TestCellsTests.swift */,
+				11DB17602439F10A0023A595 /* ViewControllerTests.swift */,
 				117832A02439E965004514E3 /* Info.plist */,
 			);
 			path = TestCellsTests;
@@ -117,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				117832AF2439EB81004514E3 /* TheCell.swift */,
+				11DB175C2439ECBD0023A595 /* TextCell.swift */,
+				11DB175E2439ECCA0023A595 /* SelectionCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -127,6 +136,14 @@
 				117832AB2439EAE9004514E3 /* MainTableDataSource.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		11DB17622439F1290023A595 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				11DB17632439F15C0023A595 /* UIViewController+Extension.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,10 +268,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11DB17642439F15C0023A595 /* UIViewController+Extension.swift in Sources */,
 				117832AC2439EAE9004514E3 /* MainTableDataSource.swift in Sources */,
 				117832B02439EB81004514E3 /* TheCell.swift in Sources */,
+				11DB175F2439ECCA0023A595 /* SelectionCell.swift in Sources */,
 				1178328C2439E963004514E3 /* ViewController.swift in Sources */,
 				117832882439E963004514E3 /* AppDelegate.swift in Sources */,
+				11DB175D2439ECBD0023A595 /* TextCell.swift in Sources */,
 				1178328A2439E963004514E3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,7 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1178329F2439E965004514E3 /* TestCellsTests.swift in Sources */,
+				11DB17612439F10A0023A595 /* ViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

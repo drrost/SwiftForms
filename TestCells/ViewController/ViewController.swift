@@ -11,10 +11,10 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-
     private var dataSource: MainTableDataSource!
 
     override func viewDidLoad() {
+
         super.viewDidLoad()
 
         dataSource = MainTableDataSource()
