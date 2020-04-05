@@ -43,5 +43,6 @@ class ViewControllerTests: XCTestCase {
 
         // Then
         XCTAssertEqual(cell.titleLabel.text, "First Name")
+        XCTAssertEqual(cell.textField.placeholder, "Type your first name here")
     }
 }

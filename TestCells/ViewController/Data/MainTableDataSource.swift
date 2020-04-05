@@ -24,9 +24,14 @@ extension MainTableDataSource: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! TextCell
-        cell.titleLabel.text = viewModel.cells[indexPath.row].title
-        return cell
+        switch viewModel.cells[indexPath.row] {
+        case let cellModel as CellModelText:
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! TextCell
+            cell.update(with: cellModel)
+            return cell
+        default:
+            return UITableViewCell()
+        }
     }
 }
 

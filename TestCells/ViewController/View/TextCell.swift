@@ -13,5 +13,10 @@ class TextCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
 
-    //    func updateWithModel(_ model: )
+    func update(with model: CellModelText) {
+
+        titleLabel.text = model.title
+        textField.text = model.text
+        textField.placeholder = model.placeholder
+    }
 }
