@@ -30,4 +30,40 @@ class ValidatorMaxTests: XCTestCase {
         // Then
         XCTAssertNotNil(sut)
     }
+
+    func testZeroLenghtEmptyText_IsValid() {
+        // Given
+        sut.maxLenght = 0
+        sut.text = ""
+
+        // When
+        let result = sut.validate()
+
+        // Then
+        XCTAssertTrue(result)
+    }
+
+    func testOneLenghtEmptyText_NotValid() {
+        // Given
+        sut.maxLenght = 1
+        sut.text = ""
+
+        // When
+        let result = sut.validate()
+
+        // Then
+        XCTAssertFalse(result)
+    }
+
+    func testOneLenghtOneText_IsValid() {
+        // Given
+        sut.maxLenght = 1
+        sut.text = "a"
+
+        // When
+        let result = sut.validate()
+
+        // Then
+        XCTAssertTrue(result)
+    }
 }
