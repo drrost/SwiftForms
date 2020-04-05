@@ -8,12 +8,21 @@
 
 import Foundation
 
-class CellModelText {
+class CellModelText: ICellModel {
 
-    // MARK: -
+    // MARK: - ICellModel
 
     var type: CellType { .text }
-    var isValid: Bool { false }
+    var isValid: Bool {
+        switch validator {
+        case let v as ValidatorMax:
+            v.text = text
+            return validator.validate()
+        default:
+            return false
+        }
+    }
+
     var validator: IValidator
 
     // MARK: -

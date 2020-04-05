@@ -16,4 +16,8 @@ class ValidatorMax: IValidator {
     func validate() -> Bool {
         text.count == maxLenght
     }
+
+    init(maxLenght: Int) {
+        self.maxLenght = maxLenght
+    }
 }
