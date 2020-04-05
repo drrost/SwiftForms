@@ -55,6 +55,30 @@ class MainScreenViewModelTests: XCTestCase {
         // Then
         XCTAssertFalse(sut.isValid)
     }
+
+    func testTwoInvalidCells_FromNotValid() {
+        // Given
+        sut.cells = [CellModelMock(false), CellModelMock(false)]
+        // When
+        // Then
+        XCTAssertFalse(sut.isValid)
+    }
+
+    func testOneValidOneInvalidCells_FromNotValid() {
+        // Given
+        sut.cells = [CellModelMock(true), CellModelMock(false)]
+        // When
+        // Then
+        XCTAssertFalse(sut.isValid)
+    }
+
+    func testTwoValidCells_FromValid() {
+        // Given
+        sut.cells = [CellModelMock(true), CellModelMock(true)]
+        // When
+        // Then
+        XCTAssertTrue(sut.isValid)
+    }
 }
 
 // MARK: - Mocks
