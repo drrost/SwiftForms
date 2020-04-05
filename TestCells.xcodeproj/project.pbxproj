@@ -14,6 +14,8 @@
 		117832912439E965004514E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 117832902439E965004514E3 /* Assets.xcassets */; };
 		117832942439E965004514E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 117832922439E965004514E3 /* LaunchScreen.storyboard */; };
 		1178329F2439E965004514E3 /* TestCellsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178329E2439E965004514E3 /* TestCellsTests.swift */; };
+		117832AC2439EAE9004514E3 /* MainTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117832AB2439EAE9004514E3 /* MainTableDataSource.swift */; };
+		117832B02439EB81004514E3 /* TheCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117832AF2439EB81004514E3 /* TheCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		1178329A2439E965004514E3 /* TestCellsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestCellsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1178329E2439E965004514E3 /* TestCellsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCellsTests.swift; sourceTree = "<group>"; };
 		117832A02439E965004514E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		117832AB2439EAE9004514E3 /* MainTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableDataSource.swift; sourceTree = "<group>"; };
+		117832AF2439EB81004514E3 /* TheCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +85,7 @@
 			children = (
 				117832872439E963004514E3 /* AppDelegate.swift */,
 				117832892439E963004514E3 /* SceneDelegate.swift */,
-				1178328B2439E963004514E3 /* ViewController.swift */,
+				117832AA2439EAC8004514E3 /* ViewController */,
 				1178328D2439E963004514E3 /* Main.storyboard */,
 				117832902439E965004514E3 /* Assets.xcassets */,
 				117832922439E965004514E3 /* LaunchScreen.storyboard */,
@@ -99,6 +103,32 @@
 			path = TestCellsTests;
 			sourceTree = "<group>";
 		};
+		117832AA2439EAC8004514E3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1178328B2439E963004514E3 /* ViewController.swift */,
+				117832AE2439EB6B004514E3 /* Data */,
+				117832AD2439EB60004514E3 /* View */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		117832AD2439EB60004514E3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				117832AF2439EB81004514E3 /* TheCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		117832AE2439EB6B004514E3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				117832AB2439EAE9004514E3 /* MainTableDataSource.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,6 +139,7 @@
 				117832802439E963004514E3 /* Sources */,
 				117832812439E963004514E3 /* Frameworks */,
 				117832822439E963004514E3 /* Resources */,
+				117832A92439E990004514E3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -195,11 +226,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		117832A92439E990004514E3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Created by: Rostyslav Druzhchenko\n#\n# Prerequirements:\n#   You have to have `homebrew` installed on your workcstation\n#\n# To disable this script on your machine:\n#\n# 1) Add to your `~/.bash_profile` or `~./.zprofile` file (depends on shell you use) the line\n#    `export POS_SWIFTLINT_ENABLED=\"FALSE\"`\n# 2) Run in Terminal `source ~/.bash_profile` to update your environment\n#\n# !!! WARNING !!!\n# This script installs `swiftlint` and `swiftformat` if they hasn't been installed yet \n\n# ============================================================================\n# Update shell with environment variables from profile file\n#\n#   MacOS versions earlier than Catalina\nif [ -f ~/.bash_profile ]; then\n    source ~/.bash_profile\nfi\n\n#   MacOS Catalina's default shell's profile file\nif [ -f ~/.zprofile ]; then\n    source ~/.zprofile\nfi\n\n# ============================================================================\n# Setup environment, declare variables\nSTART_DATE=$(date +\"%s\")\n\n#   Swiftlint\nSWIFT_LINT=/usr/local/bin/swiftlint\n\n# Install swiftlint if absent\nif [[ ! -e \"${SWIFT_LINT}\" ]]; then\n    echo \"${SWIFT_LINT} is not installed.\"\n    echo \"Installing swiftlint\"\n    brew install swiftlint\nfi\n\n#   Swiftformat\nSWIFT_FORMAT=/usr/local/bin/swiftformat\n\n# Install swiftformat if absent\nif [[ ! -e \"${SWIFT_FORMAT}\" ]]; then\n    echo \"${SWIFT_FORMAT} is not installed.\"\n    echo \"Installing swiftformat\"\n    brew install swiftformat\nfi\n\n# ============================================================================\n# Declare functions\n\n# Run SwiftLint for given filename\nrun_swiftlint() {\n    local filename=\"${1}\"\n    if [[ \"${filename##*.}\" == \"swift\" ]]; then\n        ${SWIFT_LINT} autocorrect --path \"${filename}\"\n        ${SWIFT_LINT} lint --path \"${filename}\"\n    fi\n}\n\n# Run swiftformat for given filename\nrun_swiftformat() {\n    local filename=\"${1}\"\n    if [[ \"${filename##*.}\" == \"swift\" ]]; then\n        filename=\"${filename}\"\n        echo \"!! \" ${filename}\n        ${SWIFT_FORMAT} \"${filename}\"\n    fi\n}\n\n# ============================================================================\n# Main\n\n#   Swiftlint\necho \"SwiftLint version: $(${SWIFT_LINT} version)\"\n\n# Run for both staged and unstaged files\ngit diff --name-only | while read filename; do run_swiftlint \"${filename}\"; done\ngit diff --cached --name-only | while read filename; do run_swiftlint \"${filename}\"; done\n\n# Swiftformat\necho \"Swiftformat version: $(${SWIFT_FORMAT} --version)\"\n\n# Run for both staged and unstaged files\ngit diff --name-only | while read filename; do run_swiftformat \"${filename}\"; done\ngit diff --cached --name-only | while read filename; do run_swiftformat \"${filename}\"; done\n\nEND_DATE=$(date +\"%s\")\n\n# ============================================================================\n# Print spent time\nDIFF=$(($END_DATE - $START_DATE))\necho \"SwiftLint took $(($DIFF / 60)) minutes and $(($DIFF % 60)) seconds to complete.\"\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		117832802439E963004514E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				117832AC2439EAE9004514E3 /* MainTableDataSource.swift in Sources */,
+				117832B02439EB81004514E3 /* TheCell.swift in Sources */,
 				1178328C2439E963004514E3 /* ViewController.swift in Sources */,
 				117832882439E963004514E3 /* AppDelegate.swift in Sources */,
 				1178328A2439E963004514E3 /* SceneDelegate.swift in Sources */,

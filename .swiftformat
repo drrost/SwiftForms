@@ -1,0 +1,3 @@
+--disable blankLinesAtStartOfScope, unusedArguments, trailingCommas, wrapArguments, blankLinesAroundMark, trailingClosures, wrap, strongOutlets
+--exclude Build
+--maxwidth 100
