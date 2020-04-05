@@ -33,6 +33,7 @@ protocol ICellModel {
 
     var type: CellType { get }
     var isValid: Bool { get }
+    var validator: IValidator { get set }
 }
 
 enum CellType {
@@ -44,6 +45,26 @@ enum CellType {
 
 class CellModelText {
 
+    // MARK: -
+
     var type: CellType { .text }
     var isValid: Bool { false }
+    var validator: IValidator
+
+    // MARK: -
+
+    var text: String = ""
+    var placeholder: String = ""
+
+    // MARK: - Init
+
+    init(text: String = "", placeholder: String = "", _ validator: IValidator) {
+        self.text = text
+        self.placeholder = placeholder
+        self.validator = validator
+    }
 }
+
+protocol IValidator {}
+
+class ValidatorMax: IValidator {}
