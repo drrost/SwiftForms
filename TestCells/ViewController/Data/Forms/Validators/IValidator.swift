@@ -8,4 +8,7 @@
 
 import Foundation
 
-protocol IValidator {}
+protocol IValidator {
+
+    func validate() -> Bool
+}

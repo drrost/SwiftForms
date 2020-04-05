@@ -1,5 +1,5 @@
 //
-//  MainScreenViewModel.swift
+//  CellModelText.swift
 //  TestCells
 //
 //  Created by Rostyslav Druzhchenko on 05.04.2020.
@@ -7,41 +7,6 @@
 //
 
 import Foundation
-
-protocol IFormViewModel {
-
-    var cells: [ICellModel] { get }
-
-    var isValid: Bool { get }
-}
-
-extension IFormViewModel {
-
-    var isValid: Bool {
-
-        var result = true
-
-        for cell in cells {
-            result = result && cell.isValid
-        }
-
-        return result
-    }
-}
-
-protocol ICellModel {
-
-    var type: CellType { get }
-    var isValid: Bool { get }
-    var validator: IValidator { get set }
-}
-
-enum CellType {
-
-    case undefined
-    case text
-    case selection
-}
 
 class CellModelText {
 

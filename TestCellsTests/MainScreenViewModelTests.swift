@@ -96,4 +96,9 @@ class CellModelMock: ICellModel {
     }
 }
 
-class ValidatorMock: IValidator {}
+class ValidatorMock: IValidator {
+
+    func validate() -> Bool {
+        true
+    }
+}
