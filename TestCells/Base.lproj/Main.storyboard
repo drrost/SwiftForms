@@ -117,6 +117,7 @@
                         <viewLayoutGuide key="safeArea" id="xCq-M5-C2O"/>
                     </view>
                     <connections>
+                        <outlet property="sendButton" destination="Z4E-kJ-wwr" id="VCs-M1-SfP"/>
                         <outlet property="tableView" destination="luK-v3-lJ0" id="b4G-r3-Rau"/>
                     </connections>
                 </viewController>

@@ -10,8 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: - Outlets
+
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var sendButton: UIButton!
+
+    // MARK: - Variables
+
     private var dataSource: MainTableDataSource!
+
+    // MARK: - View lifecycle
 
     override func viewDidLoad() {
 
@@ -20,5 +28,7 @@ class ViewController: UIViewController {
         dataSource = MainTableDataSource()
         tableView.delegate = dataSource
         tableView.dataSource = dataSource
+
+        sendButton.isEnabled = false
     }
 }

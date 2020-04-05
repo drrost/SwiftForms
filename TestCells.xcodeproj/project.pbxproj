@@ -15,6 +15,9 @@
 		117832942439E965004514E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 117832922439E965004514E3 /* LaunchScreen.storyboard */; };
 		117832AC2439EAE9004514E3 /* MainTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117832AB2439EAE9004514E3 /* MainTableDataSource.swift */; };
 		117832B02439EB81004514E3 /* TheCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117832AF2439EB81004514E3 /* TheCell.swift */; };
+		11CB2DDD2439F7830045D7EC /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB2DDC2439F7830045D7EC /* FormViewModel.swift */; };
+		11CB2DDF2439F8B30045D7EC /* MainScreenViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB2DDE2439F8B30045D7EC /* MainScreenViewModelTests.swift */; };
+		11CB2DE1243A3FD70045D7EC /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB2DE0243A3FD70045D7EC /* MainScreenViewModel.swift */; };
 		11DB175D2439ECBD0023A595 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DB175C2439ECBD0023A595 /* TextCell.swift */; };
 		11DB175F2439ECCA0023A595 /* SelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DB175E2439ECCA0023A595 /* SelectionCell.swift */; };
 		11DB17612439F10A0023A595 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DB17602439F10A0023A595 /* ViewControllerTests.swift */; };
@@ -44,6 +47,9 @@
 		117832A02439E965004514E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		117832AB2439EAE9004514E3 /* MainTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableDataSource.swift; sourceTree = "<group>"; };
 		117832AF2439EB81004514E3 /* TheCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCell.swift; sourceTree = "<group>"; };
+		11CB2DDC2439F7830045D7EC /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
+		11CB2DDE2439F8B30045D7EC /* MainScreenViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModelTests.swift; sourceTree = "<group>"; };
+		11CB2DE0243A3FD70045D7EC /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 		11DB175C2439ECBD0023A595 /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 		11DB175E2439ECCA0023A595 /* SelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCell.swift; sourceTree = "<group>"; };
 		11DB17602439F10A0023A595 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
@@ -105,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				11DB17602439F10A0023A595 /* ViewControllerTests.swift */,
+				11CB2DDE2439F8B30045D7EC /* MainScreenViewModelTests.swift */,
 				117832A02439E965004514E3 /* Info.plist */,
 			);
 			path = TestCellsTests;
@@ -134,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				117832AB2439EAE9004514E3 /* MainTableDataSource.swift */,
+				11CB2DDC2439F7830045D7EC /* FormViewModel.swift */,
+				11CB2DE0243A3FD70045D7EC /* MainScreenViewModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -269,10 +278,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				11DB17642439F15C0023A595 /* UIViewController+Extension.swift in Sources */,
+				11CB2DE1243A3FD70045D7EC /* MainScreenViewModel.swift in Sources */,
 				117832AC2439EAE9004514E3 /* MainTableDataSource.swift in Sources */,
 				117832B02439EB81004514E3 /* TheCell.swift in Sources */,
 				11DB175F2439ECCA0023A595 /* SelectionCell.swift in Sources */,
 				1178328C2439E963004514E3 /* ViewController.swift in Sources */,
+				11CB2DDD2439F7830045D7EC /* FormViewModel.swift in Sources */,
 				117832882439E963004514E3 /* AppDelegate.swift in Sources */,
 				11DB175D2439ECBD0023A595 /* TextCell.swift in Sources */,
 				1178328A2439E963004514E3 /* SceneDelegate.swift in Sources */,
@@ -283,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11CB2DDF2439F8B30045D7EC /* MainScreenViewModelTests.swift in Sources */,
 				11DB17612439F10A0023A595 /* ViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

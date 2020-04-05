@@ -20,6 +20,7 @@ class ViewControllerTests: XCTestCase {
 
     override func setUp() {
         sut = .instantiate("Main", "ViewController")
+        _ = sut.view
     }
 
     // MARK: - Init tests
@@ -29,5 +30,6 @@ class ViewControllerTests: XCTestCase {
         // When
         // Then
         XCTAssertNotNil(sut)
+        XCTAssertFalse(sut.sendButton.isEnabled)
     }
 }
