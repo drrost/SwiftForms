@@ -85,6 +85,8 @@ class MainScreenViewModelTests: XCTestCase {
 
 class CellModelMock: ICellModel {
 
+    var validator: IValidator = ValidatorMock()
+
     var type: CellType { .undefined }
 
     var isValid: Bool
@@ -93,3 +95,5 @@ class CellModelMock: ICellModel {
         self.isValid = isValid
     }
 }
+
+class ValidatorMock: IValidator {}

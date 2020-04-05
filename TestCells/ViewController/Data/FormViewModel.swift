@@ -64,7 +64,3 @@ class CellModelText {
         self.validator = validator
     }
 }
-
-protocol IValidator {}
-
-class ValidatorMax: IValidator {}
