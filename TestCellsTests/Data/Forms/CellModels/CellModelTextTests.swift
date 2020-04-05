@@ -42,4 +42,28 @@ class CellModelTextTests: XCTestCase {
         // Then
         XCTAssertTrue(result)
     }
+
+    func testText2Max3_CellNotValid() {
+        // Given
+        sut.text = "ab"
+        sut.validator = ValidatorMax(maxLenght: 3)
+
+        // When
+        let result = sut.isValid
+
+        // Then
+        XCTAssertFalse(result)
+    }
+
+    func testText4Max3_CellNotValid() {
+        // Given
+        sut.text = "abcd"
+        sut.validator = ValidatorMax(maxLenght: 3)
+
+        // When
+        let result = sut.isValid
+
+        // Then
+        XCTAssertFalse(result)
+    }
 }
